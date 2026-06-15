@@ -1,0 +1,88 @@
+
+RecStrip for Topfield PVR v3.2
+(C) 2016-2024 Christian Wuensch
+- based on Naludump 0.1.1 by Udo Richter -
+- based on MovieCutter 3.6 -
+- portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
+
+Executable path: /home/admin/RSTest/Docker_HD_29/bin/
+
+
+Parameters:
+DoCut=0, DoMerge=0, DoStrip=yes, RmEPG=yes, RmTxt=no, RmScr=no, RbldNav=no, RbldInf=no, PkSize=0
+
+Input file: new/RS_merge/Sportschau_merge.rec
+  File size: 72706368, packet size: 192
+  File date: Sun 19 Mar 2017 13:07:15 (local)
+  TS: PMTPID=5100, SID=10301, PCRPID=5101, Stream=0x1b, VPID=5101, HD=1
+  TS: TeletextPID=5104 [deu], InitPage=100
+
+  TS: SubtitlesPID=5105 [deu]
+  TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
+  TS: EvtDuration = 02:37
+  TS: EventName = Sportschau
+  TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
+  TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
+  TS: PID=5102, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [deu]
+  TS: PID=5103, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [mis]
+  TS: PID=5104, Teletext stream [deu]
+  TS: PID=5106, AudioType: AC3 @ 48.0 kHz, 448 kbit/s [deu]
+  TS: Teletext Programme Identification Data: 'ARD - Das Erste.'
+  TS: Teletext date: Sun 19 Mar 2017 13:07:50 (GMT+1)
+  Failed to get service name from SDT.
+  TS: EvtStart  = Sun 19 Mar 2017 10:23:00 (GMT+1)
+  TS: FirstPCR  = 534346488160 (5:29:50,610), Last: 536197349377 (5:30:59,161)
+  TS: Duration  = 0:01:08,551 (PCR)
+  TS: Setting start time to file time instead EPG event start.
+  TS: StartTime = Sun 19 Mar 2017 13:07:15
+  PIDs to be checked for continuity: [0] [5101], [1] 5102, [2] 5103, [3] 5106, [4] 5104, [5] 18
+
+Inf file: new/RS_merge/Sportschau_merge.rec.inf
+  Determine SystemType: DVBs = 0, DVBt = -4, DVBc = -5 Points
+   -> SystemType=ST_TMSs
+  INF: VideoStream=0x1b, VideoPID=5101, HD=1
+  INF: Duration = 00 min 37 sec
+  INF: ServiceName = Das Erste HD
+  INF: Bookmarks = 2880, 4239, 5953, 6807
+
+Nav file: new/RS_merge/Sportschau_merge.rec.nav
+  NAV: FirstPTS = 890642552 (5:29:52,056), Last: 893715152 (5:31:00,336)
+  NAV: Duration = 00:00:36,751 (PTS: 00:01:08,280)
+  NAV: Frames   = 1833 (49.9 fps)
+
+Cut file: new/RS_merge/Sportschau_merge.cut
+  CutFileLoad: Importing cut-file version 4
+    0 ;  -  ;             0 ;   0:00:00,000 ;    0.0% ; 
+    1 ;  -  ;      25990272 ;   0:00:13,257 ;   35.7% ; 
+    2 ;  -  ;      53713152 ;   0:00:27,512 ;   73.9% ; 
+    3 ;  -  ;      72706368 ;   0:00:37,325 ;  100.0% ; 
+
+Srt file: new/RS_merge/Sportschau_merge.srt
+
+
+Output rec: new/RS_merge/Sportschau_mergestrip.rec
+
+Inf output: new/RS_merge/Sportschau_mergestrip.rec.inf
+
+Nav output: new/RS_merge/Sportschau_mergestrip.rec.nav
+
+Cut output: new/RS_merge/Sportschau_mergestrip.cut
+
+Srt output: new/RS_merge/Sportschau_mergestrip.srt
+
+
+  PESMuxer: Detected frame rate: 50 frames per second.
+  PESProcessor: TS continuity mismatch (PID=5101, pos=25991424, expect=7, found=2)
+TSCheck: Continuity Error:	1.	35.75%	19802995->19803015 (0.020 sec)	5101	25991424	0	0	0	0	5106	25993536	5104	26013504	18	25990656
+  PESProcessor: TS continuity mismatch (PID=5101, pos=53714304, expect=4, found=3)
+TSCheck: Continuity Error:	2.	73.88%	19834155->19834175 (0.020 sec)	5101	53714304	0	0	5103	53714688	5106	53718912	0	0	18	53713536
+
+TSCheck: 2 continuity errors found.
+
+NewNav: 1834 of 1833 frames written.
+NewNav: FirstPTS = 890642552 (5:29:52,056), Last: 893720552 (5:31:00,456)
+NewNav: Duration = 0:00:37,100 (time jumps 00:31,300)
+
+
+Packets: 375868, FillerNALUs: 67075 (17%), ZeroByteStuffing: 31 (0%), AdaptationFields: 54 (0%), NullPackets: 0 (0%), EPG: 21380 (5%), Teletext: 0 (0%), Scrambled: 0 (0%), Dropped (all): 88540 (23%)
+

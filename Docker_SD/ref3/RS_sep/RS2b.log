@@ -1,0 +1,83 @@
+
+RecStrip for Topfield PVR v3.2
+(C) 2016-2024 Christian Wuensch
+- based on Naludump 0.1.1 by Udo Richter -
+- based on MovieCutter 3.6 -
+- portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
+
+Executable path: /home/admin/RSTest/Docker_SD/bin/
+
+
+Parameters:
+DoCut=0, DoMerge=0, DoStrip=yes, RmEPG=yes, RmTxt=no, RmScr=no, RbldNav=no, RbldInf=no, PkSize=0
+
+Input file: new/RS_sep/Wintersport (Cut-2).rec
+  File size: 37540800, packet size: 192
+  File date: Wed 27 Nov 2013 17:09:29 (local)
+  TS: PMTPID=100, SID=28006, PCRPID=110, Stream=0x2, VPID=110, HD=0
+  TS: TeletextPID=130 [deu], InitPage=100
+
+  TS: SubtitlesPID=131 [deu]
+  TS: EvtStart  = Wed 27 Nov 2013 16:05:00 (UTC)
+  TS: EvtDuration = 01:55
+  TS: EventName = Wintersport
+  TS: EventDesc = Biathlon-Weltcup
+  TS: EPGExtEvt = ca. 17:05 Uhr Biathlon-Weltcup 15 km Einzel Damen Übertragung aus Östersund/Schweden Reporter: Christoph Hamm, Herbert Fritzenwenger Moderation: Alexander Ruda Experte: Sven Fischer
+  TS: PID=130, Teletext stream [deu]
+  TS: PID=121, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 192 kbit/s [mis]
+  TS: PID=120, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [deu]
+  TS: SvcName   = ZDF
+  TS: PID=125, AudioType: AC3 @ 48.0 kHz, 448 kbit/s [deu]
+  TS: PID=122, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 192 kbit/s [mul]
+  TS: PID=131, DVB subtitles stream [deu]
+  TS: PID=110, VideoType: MPEG2, 720x576 @ 25.000 fps, AspectRatio=16:9 (1.778) -> SD
+  TS: Teletext Programme Identification Data: 'ZDF: Wintersport'
+  TS: Teletext date: Wed 27 Nov 2013 17:09:50 (GMT+1)
+  TS: EvtStart  = Wed 27 Nov 2013 17:05:00 (GMT+1)
+  TS: FirstPCR  = 234296454868 (2:24:37,646), Last: 235307523766 (2:25:15,093)
+  TS: Duration  = 0:00:37,447 (PCR)
+  TS: StartTime = Wed 27 Nov 2013 17:09:30
+  PIDs to be checked for continuity: [0] [110], [1] 120, [2] 121, [3] 122, [4] 125, [5] 130, [6] 18, [7] 131
+
+Inf file: new/RS_sep/Wintersport (Cut-2).rec.inf
+  Determine SystemType: DVBs = -4, DVBt = -4, DVBc = 0 Points
+   -> SystemType=ST_TMSc
+  INF: VideoStream=0x2, VideoPID=110, HD=0
+  INF: Duration = 00 min 38 sec
+  INF: ServiceName = ZDF
+  INF: Bookmarks = 1975
+
+Nav file: new/RS_sep/Wintersport (Cut-2).rec.nav
+  NAV: FirstPTS = 390526442 (2:24:38,365), Last: 392195042 (2:25:15,445)
+  NAV: Duration = 00:00:37,004 (PTS: 00:00:37,080)
+  NAV: Frames   = 926 (25.0 fps)
+
+Cut file: new/RS_sep/Wintersport (Cut-2).cut
+  CutFileLoad: Importing cut-file version 3
+    0 ;  -  ;          0 ;   0:00:00,000 ;    0.0% ; Juhuuu, ich bin die Nummer 3
+    1 ;  -  ;       4160 ;   0:00:37,504 ;  100.0% ; Nummer 4 hier - ich will auch bleiben
+
+
+Output rec: new/RS_sep/Wintersport (Cut-2)_strip.rec
+
+Inf output: new/RS_sep/Wintersport (Cut-2)_strip.rec.inf
+
+Nav output: new/RS_sep/Wintersport (Cut-2)_strip.rec.nav
+
+Cut output: new/RS_sep/Wintersport (Cut-2)_strip.cut
+Subtitles output: new/RS_sep/Wintersport (Cut-2)_strip.srt
+
+
+  PESMuxer: Detected frame rate: 25 frames per second.
+  TTX: Trying to extract subtitles from page 777
+
+
+TSCheck: 0 continuity errors found.
+
+NewNav: 926 of 926 frames written.
+NewNav: FirstPTS = 390526442 (2:24:38,365), Last: 392195042 (2:25:15,445)
+NewNav: Duration = 0:00:37,080
+
+
+Packets: 195452, FillerNALUs: 0 (0%), ZeroByteStuffing: 837 (0%), AdaptationFields: 43 (0%), NullPackets: 0 (0%), EPG: 35433 (18%), Teletext: 0 (0%), Scrambled: 0 (0%), Dropped (all): 36313 (18%)
+

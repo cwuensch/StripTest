@@ -1,0 +1,130 @@
+
+RecStrip for Topfield PVR v3.2
+(C) 2016-2024 Christian Wuensch
+- based on Naludump 0.1.1 by Udo Richter -
+- based on MovieCutter 3.6 -
+- portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
+
+Executable path: /home/admin/RSTest/Docker_SD/bin/
+
+
+Parameters:
+DoCut=2, DoMerge=0, DoStrip=yes, RmEPG=yes, RmTxt=no, RmScr=no, RbldNav=no, RbldInf=no, PkSize=0
+
+Input file: Wintersport.rec
+  File size: 222707392, packet size: 192
+  File date: Wed 09 Oct 2024 22:57:47 (local)
+  TS: PMTPID=100, SID=28006, PCRPID=110, Stream=0x2, VPID=110, HD=0
+  TS: TeletextPID=130 [deu], InitPage=100
+
+  TS: SubtitlesPID=131 [deu]
+  TS: PID=122, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 192 kbit/s [mul]
+  TS: PID=130, Teletext stream [deu]
+  TS: PID=131, DVB subtitles stream [deu]
+  TS: PID=125, AudioType: AC3 @ 48.0 kHz, 448 kbit/s [deu]
+  TS: PID=121, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 192 kbit/s [mis]
+  TS: PID=120, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [deu]
+  TS: SvcName   = ZDF
+  TS: PID=110, VideoType: MPEG2, 720x576 @ 25.000 fps, AspectRatio=16:9 (1.778) -> SD
+  TS: EvtStart  = Wed 27 Nov 2013 16:05:00 (UTC)
+  TS: EvtDuration = 01:55
+  TS: EventName = Wintersport
+  TS: EventDesc = Biathlon-Weltcup
+  TS: EPGExtEvt = ca. 17:05 Uhr Biathlon-Weltcup 15 km Einzel Damen Ãœbertragung aus Ã–stersund/Schweden ÂŠReporter: Christoph Hamm, Herbert Fritzenwenger Moderation: Alexander Ruda Experte: Sven Fischer
+  TS: Teletext Programme Identification Data: 'ZDF: Wintersport'
+  TS: Teletext date: Wed 27 Nov 2013 17:09:25 (GMT+1)
+  TS: EvtStart  = Wed 27 Nov 2013 17:05:00 (GMT+1)
+  TS: FirstPCR  = 231004382856 (2:22:35,717), Last: 237164431587 (2:26:23,867)
+  TS: Duration  = 0:03:48,150 (PCR)
+  TS: StartTime = Wed 27 Nov 2013 17:07:28
+  PIDs to be checked for continuity: [0] [110], [1] 120, [2] 121, [3] 122, [4] 125, [5] 130, [6] 18, [7] 131
+
+Inf file: Wintersport.rec.inf
+  Determine SystemType: DVBs = -4, DVBt = -4, DVBc = 0 Points
+   -> SystemType=ST_TMSc
+  INF: VideoStream=0x2, VideoPID=110, HD=0
+  INF: Duration = 03 min 48 sec
+  INF: ServiceName = ZDF
+  INF: Bookmarks = 780, 8520, 11290, 14967, 19326, 22466, 23292
+
+Nav file: Wintersport.rec.nav
+  NAV: FirstPTS = 385040042 (2:22:36,445), Last: 395283842 (2:26:24,085)
+  NAV: Duration = 00:03:47,560 (PTS: 00:03:47,640)
+  NAV: Frames   = 5692 (25.0 fps)
+
+Cut file: Wintersport.cut
+  CutFileLoad: Importing cut-file version 3
+    0 ;  *  ;          0 ;   0:00:00,000 ;    0.0% ; Das ist Segment 1
+    1 ;  -  ;       5824 ;   0:00:55,521 ;   23.6% ; Segment 2 soll erhalten bleiben
+    2 ;  *  ;      12992 ;   0:02:01,535 ;   52.6% ; Juhuuu, ich bin die Nummer 3
+    3 ;  -  ;      17152 ;   0:02:39,537 ;   69.5% ; Nummer 4 hier - ich will auch bleiben
+    4 ;  *  ;      21504 ;   0:03:20,542 ;   87.1% ; Nr. 5 hat einen langen Namen, der ist sooo lang, und enthält auch noch Umlaute, das ist der absoluter Knüller!!!
+    5 ;  -  ;      24679 ;   0:03:47,562 ;  100.0% ; Nr. 6 ist das Ende
+
+
+[Segment 1]  *           0            0-52555776     Das ist Segment 1
+
+Output rec: new/RS_sepstrip/Wintersport (Cut-1).rec
+
+Inf output: new/RS_sepstrip/Wintersport (Cut-1).rec.inf
+
+Nav output: new/RS_sepstrip/Wintersport (Cut-1).rec.nav
+
+Cut output: new/RS_sepstrip/Wintersport (Cut-1).cut
+Subtitles output: new/RS_sepstrip/Wintersport (Cut-1).srt
+
+  PESMuxer: Detected frame rate: 25 frames per second.
+  TTX: Trying to extract subtitles from page 777
+
+
+NewNav: 1385 of 5692 frames written.
+NewNav: FirstPTS = 385040042 (2:22:36,445), Last: 387534842 (2:23:31,885)
+NewNav: Duration = 0:00:55,440
+
+[Segment 2]  -    52555776     52555776-117239808    Segment 2 soll erhalten bleiben
+[Segment 3]  *   117239808    117239808-154779648    Juhuuu, ich bin die Nummer 3
+
+Output rec: new/RS_sepstrip/Wintersport (Cut-2).rec
+
+Inf output: new/RS_sepstrip/Wintersport (Cut-2).rec.inf
+
+Nav output: new/RS_sepstrip/Wintersport (Cut-2).rec.nav
+
+Cut output: new/RS_sepstrip/Wintersport (Cut-2).cut
+Subtitles output: new/RS_sepstrip/Wintersport (Cut-2).srt
+
+  PESMuxer: Detected frame rate: 25 frames per second.
+  TTX: Trying to extract subtitles from page 777
+
+
+NewNav: 926 of 5692 frames written.
+NewNav: FirstPTS = 390526442 (2:24:38,365), Last: 392195042 (2:25:15,445)
+NewNav: Duration = 0:00:37,080
+
+[Segment 4]  -   154779648    154779648-194052096    Nummer 4 hier - ich will auch bleiben
+[Segment 5]  *   194052096    194052096-222707392    Nr. 5 hat einen langen Namen, der ist sooo lang, und enthält auch noch Umlaute, das ist der absoluter Knüller!!!
+
+Output rec: new/RS_sepstrip/Wintersport (Cut-3).rec
+
+Inf output: new/RS_sepstrip/Wintersport (Cut-3).rec.inf
+
+Nav output: new/RS_sepstrip/Wintersport (Cut-3).rec.nav
+
+Cut output: new/RS_sepstrip/Wintersport (Cut-3).cut
+Subtitles output: new/RS_sepstrip/Wintersport (Cut-3).srt
+
+  PESMuxer: Detected frame rate: 25 frames per second.
+  TTX: Trying to extract subtitles from page 777
+
+
+TSCheck: 0 continuity errors found.
+
+NewNav: 690 of 5692 frames written.
+NewNav: FirstPTS = 394047242 (2:25:56,605), Last: 395289242 (2:26:24,205)
+NewNav: Duration = 0:00:27,600
+
+
+Segments: 3 of 5 segments copied.
+
+Packets: 618082, FillerNALUs: 0 (0%), ZeroByteStuffing: 5612 (0%), AdaptationFields: 156 (0%), NullPackets: 0 (0%), EPG: 114421 (18%), Teletext: 0 (0%), Scrambled: 0 (0%), Dropped (all): 120189 (19%)
+

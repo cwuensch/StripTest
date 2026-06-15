@@ -1,0 +1,9 @@
+[MCCut4]
+RecFileSize=30606720
+NrSegmentMarker=2
+ActiveSegment=0
+
+[Segments]
+#Nr ; Sel ; StartPosition ;     StartTime ; Percent ; Caption
+  0 ;  -  ;             0 ;   0:00:00,000 ;    0.0% ; Juhuuu, ich bin die Nummer 3
+  1 ;  -  ;      30606720 ;   0:00:37,504 ;  100.0% ; Nummer 4 hier - ich will auch bleiben

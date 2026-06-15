@@ -1,0 +1,81 @@
+
+RecStrip for Topfield PVR v2.9
+(C) 2016-2024 Christian Wuensch
+- based on Naludump 0.1.1 by Udo Richter -
+- based on MovieCutter 3.6 -
+- portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
+
+Executable path: /home/admin/RSTest/Docker_HD_29/bin/
+
+
+Parameters:
+DoCut=0, DoMerge=0, DoStrip=yes, RmEPG=yes, RmTxt=no, RmScr=no, RbldNav=no, RbldInf=no, PkSize=0
+
+Input file: new/RS_sep/Sportschau (Cut-3).rec
+  File size: 18993216, packet size: 192
+  File date: Sun 19 Mar 2017 13:08:13 (local)
+  TS: PMTPID=5100, SID=10301, PCRPID=5101, Stream=0x1b, VPID=5101, HD=1
+  TS: TeletextPID=5104 [deu], InitPage=100
+
+  TS: SubtitlesPID=5105 [deu]
+  TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
+  TS: EvtDuration = 02:37
+  TS: EventName = Sportschau
+  TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
+  TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
+  TS: PID=5104, Teletext stream [deu]
+  TS: PID=5102, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [deu]
+  TS: PID=5103, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [mis]
+  TS: PID=5106, AudioType: AC3 @ 48.0 kHz, 448 kbit/s [deu]
+  TS: PID=5101, VideoType: H.264, 1280x720 @ 50.000 fps, AspectRatio=16:9 (1.778) -> HD
+  TS: Teletext Possible Time String: ' 19.03.17 13:08:17'
+  TS: Teletext date*: Sun 19 Mar 2017 13:08:17 (GMT+1)
+  TS: Teletext Programme Identification Data: 'ARD - Das Erste.'
+  TS: Teletext date: Sun 19 Mar 2017 13:08:18 (GMT+1)
+  Failed to get service name from SDT.
+  TS: EvtStart  = Sun 19 Mar 2017 10:23:00 (GMT+1)
+  TS: FirstPCR  = 535922756256 (5:30:48,990), Last: 536197349377 (5:30:59,161)
+  TS: Duration  = 0:00:10,171 (PCR)
+  TS: Setting start time to file time instead EPG event start.
+  TS: StartTime = Sun 19 Mar 2017 13:08:13
+  PIDs to be checked for continuity: [0] [5101], [1] 5102, [2] 5103, [3] 5106, [4] 5104, [5] 18
+
+Inf file: new/RS_sep/Sportschau (Cut-3).rec.inf
+  Determine SystemType: DVBs = 0, DVBt = -4, DVBc = -5 Points
+   -> SystemType=ST_TMSs
+  INF: VideoStream=0x1b, VideoPID=5101, HD=1
+  INF: Duration = 00 min 10 sec
+  INF: ServiceName = Das Erste HD
+  INF: Bookmarks = 856
+
+Nav file: new/RS_sep/Sportschau (Cut-3).rec.nav
+  NAV: FirstPTS = 893266052 (5:30:50,356), Last: 893715152 (5:31:00,336)
+  NAV: Duration = 00:00:09,751 (PTS: 00:00:09,980)
+  NAV: Frames   = 500 (51.3 fps)
+
+Cut file: new/RS_sep/Sportschau (Cut-3).cut
+
+Srt file: new/RS_sep/Sportschau (Cut-3).srt
+
+
+Output rec: new/RS_sep/Sportschau (Cut-3)_strip.rec
+
+Inf output: new/RS_sep/Sportschau (Cut-3)_strip.rec.inf
+
+Nav output: new/RS_sep/Sportschau (Cut-3)_strip.rec.nav
+
+Cut output: new/RS_sep/Sportschau (Cut-3)_strip.cut
+
+Srt output: new/RS_sep/Sportschau (Cut-3)_strip.srt
+
+
+
+TSCheck: 0 continuity errors found.
+
+NewNav: 501 of 500 frames written.
+NewNav: FirstPTS = 893266052 (5:30:50,356), Last: 893720552 (5:31:00,456)
+NewNav: Duration = 0:00:10,100
+
+
+Packets: 98923, FillerNALUs: 25196 (25%), ZeroByteStuffing: 5 (0%), AdaptationFields: 993 (1%), NullPackets: 0 (0%), EPG: 5850 (5%), Teletext: 0 (0%), Scrambled: 0 (0%), Dropped (all): 32044 (32%)
+

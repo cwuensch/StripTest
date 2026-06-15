@@ -1,0 +1,10 @@
+[MCCut4]
+RecFileSize=49459776
+NrSegmentMarker=3
+ActiveSegment=0
+
+[Segments]
+#Nr ; Sel ; StartPosition ;     StartTime ; Percent ; Caption
+  0 ;  -  ;             0 ;   0:00:00,000 ;    0.0% ; 
+  1 ;  -  ;      26918400 ;   0:00:16,755 ;   54.4% ; 
+  2 ;  -  ;      49459776 ;   0:00:31,256 ;  100.0% ; 

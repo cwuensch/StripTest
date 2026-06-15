@@ -1,0 +1,42 @@
+1
+00:00:10,080 --> 00:00:12,900
+Andrea Henkel wird am 10. Dezember
+36 Jahre alt.
+
+2
+00:00:15,700 --> 00:00:19,740
+Sie hat sich noch einmal viel
+vorgenommen für ihre Abschiedssaison
+
+3
+00:00:21,420 --> 00:00:23,980
+<font color="#ffff00">Andrea Henkel beim Frühstück in der</font>
+<font color="#ffff00">Hütten-WG.</font>
+
+4
+00:00:24,020 --> 00:00:26,020
+<font color="#00ff00">Hallo.</font>
+
+5
+00:00:29,460 --> 00:00:32,260
+<font color="#00ffff">Die Sonne sehen wir heute glaube ich</font>
+<font color="#00ffff">nicht mehr.</font>
+
+6
+00:00:34,480 --> 00:00:36,480
+<font color="#00ffff">Hier ist es einfach gemütlich.</font>
+
+7
+00:00:42,400 --> 00:00:44,800
+<font color="#00ffff">So ist es immer beim</font>
+<font color="#00ffff">November-Lehrgang.</font>
+
+8
+00:00:52,960 --> 00:00:55,340
+<font color="#ffff00">Andrea Henkel steht vor ihrer</font>
+<font color="#ffff00">19.Saison.</font>
+
+9
+00:00:55,680 --> 00:00:55,700
+<font color="#ffff00">Es ist ihre letzte.</font>
+

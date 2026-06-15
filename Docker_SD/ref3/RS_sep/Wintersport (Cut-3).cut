@@ -1,0 +1,9 @@
+[MCCut3]
+RecFileSize=28656192
+NrSegmentMarker=2
+ActiveSegment=0
+
+[Segments]
+#Nr ; Sel ; StartBlock ;     StartTime ; Percent ; Caption
+  0 ;  -  ;          0 ;   0:00:00,000 ;    0.0% ; Nr. 5 hat einen langen Namen, der ist sooo lang, und enthält auch noch Umlaute, das ist der absoluter Knüller!!!
+  1 ;  -  ;       3175 ;   0:00:27,515 ;  100.0% ; Nr. 6 ist das Ende

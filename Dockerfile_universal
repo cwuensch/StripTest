@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+ARG SRCTAR=StripTest
+
+#Install x86 support (optional)
+RUN dpkg --add-architecture i386
+RUN apt-get update && apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
+RUN apt-get update && apt-get -y install make gcc-multilib
+RUN apt-get update && apt-get -y install wget unzip git
+
+RUN mkdir -p /StripTest/bin /StripTest/bin_ref
+WORKDIR /StripTest
+
+COPY Docker_SD/Wintersport*.* /StripTest/
+COPY Docker_HD/Sportschau*.* /StripTest/
+
+COPY Docker_SD/bin/RecStrip_ref /StripTest/bin_ref/RecStrip
+COPY Docker_SD/bin/RecStrip3_ref /StripTest/bin_ref/RecStrip3
+
+COPY StripTest.sh /StripTest/RunTest.sh
+COPY StripTestSD.cmd /StripTest/RunTestSD.cmd
+COPY StripTestHD.cmd /StripTest/RunTestHD.cmd
+COPY BuildRS.sh /StripTest/BuildRS.sh
+RUN chmod a+x /StripTest/RunTest.sh /StripTest/BuildRS.sh
+
+VOLUME StripTest/bin
+
+ENTRYPOINT [ "./RunTest.sh" ]

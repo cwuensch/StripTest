@@ -1,0 +1,125 @@
+
+RecStrip for Topfield PVR v3.2
+(C) 2016-2024 Christian Wuensch
+- based on Naludump 0.1.1 by Udo Richter -
+- based on MovieCutter 3.6 -
+- portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
+
+Executable path: /home/admin/RSTest/Docker_HD_29/bin/
+
+
+Parameters:
+DoCut=2, DoMerge=0, DoStrip=no, RmEPG=no, RmTxt=no, RmScr=no, RbldNav=no, RbldInf=no, PkSize=0
+
+Input file: Sportschau.rec
+  File size: 135654336, packet size: 192
+  File date: Wed 09 Oct 2024 23:05:12 (local)
+  TS: PMTPID=5100, SID=10301, PCRPID=5101, Stream=0x1b, VPID=5101, HD=1
+  TS: TeletextPID=5104 [deu], InitPage=100
+
+  TS: SubtitlesPID=5105 [deu]
+  TS: PID=5102, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [deu]
+  TS: PID=5103, AudioType: MPEG1, Layer 2 @ 48.0 kHz, Stereo, 256 kbit/s [mis]
+  TS: PID=5106, AudioType: AC3 @ 48.0 kHz, 448 kbit/s [deu]
+  TS: PID=5104, Teletext stream [deu]
+  TS: PID=5101, VideoType: H.264, 1280x720 @ 50.000 fps, AspectRatio=16:9 (1.778) -> HD
+  TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
+  TS: EvtDuration = 02:37
+  TS: EventName = Sportschau
+  TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
+  TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
+  TS: SvcName   = Das Erste HD
+  TS: PID=5105, DVB subtitles stream [deu]
+  TS: Teletext Programme Identification Data: 'ARD - Das Erste.'
+  TS: Teletext date: Sun 19 Mar 2017 13:07:49 (GMT+1)
+  TS: EvtStart  = Sun 19 Mar 2017 10:23:00 (GMT+1)
+  TS: FirstPCR  = 534346488160 (5:29:50,610), Last: 536197349377 (5:30:59,161)
+  TS: Duration  = 0:01:08,551 (PCR)
+  TS: StartTime = Sun 19 Mar 2017 13:07:15
+  PIDs to be checked for continuity: [0] 5101, [1] 5102, [2] 5103, [3] 5106, [4] 5104, [5] 18, [6] 5105
+
+Inf file: Sportschau.rec.inf
+  Determine SystemType: DVBs = 0, DVBt = -4, DVBc = -5 Points
+   -> SystemType=ST_TMSs
+  INF: VideoStream=0x1b, VideoPID=5101, HD=1
+  INF: Duration = 01 min 08 sec
+  INF: ServiceName = Das Erste HD
+  INF: Bookmarks = 423, 2572, 4476, 6278, 8016, 9382, 10689, 11478, 12312, 13784
+
+Nav file: Sportschau.rec.nav
+  NAV: FirstPTS = 890642552 (5:29:52,056), Last: 893715152 (5:31:00,336)
+  NAV: Duration = 00:01:08,007 (PTS: 00:01:08,280)
+  NAV: Frames   = 3415 (50.2 fps)
+
+Cut file: Sportschau.cut
+  CutFileLoad: Importing cut-file version 3
+    0 ;  *  ;          0 ;   0:00:00,000 ;    0.0% ; 
+    1 ;  -  ;       2880 ;   0:00:12,758 ;   19.2% ; 
+    2 ;  *  ;       6656 ;   0:00:29,513 ;   44.3% ; 
+    3 ;  -  ;       9728 ;   0:00:43,763 ;   64.7% ; 
+    4 ;  *  ;      12928 ;   0:00:58,518 ;   86.0% ; 
+    5 ;  -  ;      15032 ;   0:01:08,270 ;  100.0% ; 
+
+Srt file: Sportschau.srt
+
+
+[Segment 1]  *           0          0-2880       (null)
+
+Output rec: new/RS_sep/Sportschau (Cut-1).rec
+
+Inf output: new/RS_sep/Sportschau (Cut-1).rec.inf
+
+Nav output: new/RS_sep/Sportschau (Cut-1).rec.nav
+
+Cut output: new/RS_sep/Sportschau (Cut-1).cut
+
+Srt output: new/RS_sep/Sportschau (Cut-1).srt
+
+
+NewNav: 626 of 3415 frames written.
+NewNav: FirstPTS = 890642552 (5:29:52,056), Last: 891209552 (5:30:04,656)
+NewNav: Duration = 0:00:12,600
+
+[Segment 2]  -    25989120       2880-6656       (null)
+[Segment 3]  *    60063744       6656-9728       (null)
+
+Output rec: new/RS_sep/Sportschau (Cut-2).rec
+
+Inf output: new/RS_sep/Sportschau (Cut-2).rec.inf
+
+Nav output: new/RS_sep/Sportschau (Cut-2).rec.nav
+
+Cut output: new/RS_sep/Sportschau (Cut-2).cut
+
+Srt output: new/RS_sep/Sportschau (Cut-2).srt
+
+
+NewNav: 707 of 3415 frames written.
+NewNav: FirstPTS = 891971852 (5:30:21,596), Last: 892611752 (5:30:35,816)
+NewNav: Duration = 0:00:14,220
+
+[Segment 4]  -    87785472       9728-12928      (null)
+[Segment 5]  *   116662272      12928-15032      (null)
+
+Output rec: new/RS_sep/Sportschau (Cut-3).rec
+
+Inf output: new/RS_sep/Sportschau (Cut-3).rec.inf
+
+Nav output: new/RS_sep/Sportschau (Cut-3).rec.nav
+
+Cut output: new/RS_sep/Sportschau (Cut-3).cut
+
+Srt output: new/RS_sep/Sportschau (Cut-3).srt
+
+
+TSCheck: 0 continuity errors found.
+
+NewNav: 500 of 3415 frames written.
+NewNav: FirstPTS = 893266052 (5:30:50,356), Last: 893715152 (5:31:00,336)
+NewNav: Duration = 0:00:09,980
+
+
+Segments: 3 of 5 segments copied.
+
+Packets: 378679, FillerNALUs: 0 (0%), ZeroByteStuffing: 0 (0%), AdaptationFields: 0 (0%), NullPackets: 0 (0%), EPG: 0 (0%), Teletext: 0 (0%), Scrambled: 0 (0%), Dropped (all): 0 (0%)
+

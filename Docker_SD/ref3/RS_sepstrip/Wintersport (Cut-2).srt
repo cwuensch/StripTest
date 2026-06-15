@@ -1,0 +1,31 @@
+1
+00:00:02,540 --> 00:00:05,900
+<font color="#ffff00">Auch auf der Zielgeraden möchte</font>
+<font color="#ffff00">Andrea Henkel beweisen,</font>
+
+2
+00:00:07,720 --> 00:00:10,100
+<font color="#ffff00">dass sie immer noch zu den besten</font>
+<font color="#ffff00">gehört.</font>
+
+3
+00:00:14,140 --> 00:00:16,980
+<font color="#00ffff">Ich glaube, dass der Körper ganz</font>
+<font color="#00ffff">viel ausmacht.</font>
+
+4
+00:00:19,020 --> 00:00:20,980
+<font color="#ffff00">In der WG herrscht Vorfreude.</font>
+
+5
+00:00:24,540 --> 00:00:26,540
+<font color="#ffff00">Kein Wunder, bei den Outfits.</font>
+
+6
+00:00:29,200 --> 00:00:31,380
+<font color="#00ff00">Das ist unsere Wettkampf-Kleidung.</font>
+
+7
+00:00:33,160 --> 00:00:35,240
+<font color="#00ffff">Und so gehen wir feiern.</font>
+

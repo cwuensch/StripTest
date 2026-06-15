@@ -1,0 +1,4 @@
+Docker_SD/Wintersport.rec filter=lfs diff=lfs merge=lfs -text
+Docker_HD/Sportschau.rec filter=lfs diff=lfs merge=lfs -text
+Docker_HD/ref/RS_append/Sportschau.rec filter=lfs diff=lfs merge=lfs -text
+Docker_HD/ref3/RS_append/Sportschau.rec filter=lfs diff=lfs merge=lfs -text
