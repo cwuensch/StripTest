@@ -1,11 +1,11 @@
 
 RecStrip for Topfield PVR v3.2
-(C) 2016-2024 Christian Wuensch
+(C) 2016-2026 Christian Wuensch
 - based on Naludump 0.1.1 by Udo Richter -
 - based on MovieCutter 3.6 -
 - portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
 
-Executable path: /home/admin/RSTest/Docker_HD_29/bin/
+Executable path: /home/admin/RSTest/Docker_HD/bin/
 
 
 Parameters:
@@ -19,7 +19,7 @@ Input file: new/RS_merge/Sportschau_merge.rec
 
   TS: SubtitlesPID=5105 [deu]
   TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
-  TS: EvtDuration = 02:37
+  TS: EvtDuratn = 02:37
   TS: EventName = Sportschau
   TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
   TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
@@ -47,7 +47,7 @@ Inf file: new/RS_merge/Sportschau_merge.rec.inf
 
 Nav file: new/RS_merge/Sportschau_merge.rec.nav
   NAV: FirstPTS = 890642552 (5:29:52,056), Last: 893715152 (5:31:00,336)
-  NAV: Duration = 00:00:36,751 (PTS: 00:01:08,280)
+  NAV: Duration = 00:00:36,763 (PTS: 00:01:08,280)
   NAV: Frames   = 1833 (49.9 fps)
 
 Cut file: new/RS_merge/Sportschau_merge.cut

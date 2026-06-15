@@ -1,6 +1,6 @@
 
 RecStrip for Topfield PVR v3.2
-(C) 2016-2024 Christian Wuensch
+(C) 2016-2026 Christian Wuensch
 - based on Naludump 0.1.1 by Udo Richter -
 - based on MovieCutter 3.6 -
 - portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
@@ -19,7 +19,7 @@ Input file: new/RS_gem/Wintersport_cut.rec
 
   TS: SubtitlesPID=131 [deu]
   TS: EvtStart  = Wed 27 Nov 2013 16:05:00 (UTC)
-  TS: EvtDuration = 01:55
+  TS: EvtDuratn = 01:55
   TS: EventName = Wintersport
   TS: EventDesc = Biathlon-Weltcup
   TS: EPGExtEvt = ca. 17:05 Uhr Biathlon-Weltcup 15 km Einzel Damen Übertragung aus Östersund/Schweden Reporter: Christoph Hamm, Herbert Fritzenwenger Moderation: Alexander Ruda Experte: Sven Fischer

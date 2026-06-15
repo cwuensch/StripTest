@@ -1,11 +1,11 @@
 
 RecStrip for Topfield PVR v3.2
-(C) 2016-2024 Christian Wuensch
+(C) 2016-2026 Christian Wuensch
 - based on Naludump 0.1.1 by Udo Richter -
 - based on MovieCutter 3.6 -
 - portions of Mpeg2cleaner (S. Poeschel), RebuildNav (Firebird) & TFTool (jkIT)
 
-Executable path: /home/admin/RSTest/Docker_HD_29/bin/
+Executable path: /home/admin/RSTest/Docker_HD/bin/
 
 
 Parameters:
@@ -19,7 +19,7 @@ Input file: new/RS_sep/Sportschau (Cut-1).rec
 
   TS: SubtitlesPID=5105 [deu]
   TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
-  TS: EvtDuration = 02:37
+  TS: EvtDuratn = 02:37
   TS: EventName = Sportschau
   TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
   TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
@@ -48,7 +48,7 @@ Inf file: new/RS_sep/Sportschau (Cut-1).rec.inf
 
 Nav file: new/RS_sep/Sportschau (Cut-1).rec.nav
   NAV: FirstPTS = 890642552 (5:29:52,056), Last: 891209552 (5:30:04,656)
-  NAV: Duration = 00:00:12,494 (PTS: 00:00:12,600)
+  NAV: Duration = 00:00:12,506 (PTS: 00:00:12,600)
   NAV: Frames   = 626 (50.1 fps)
 
 Cut file: new/RS_sep/Sportschau (Cut-1).cut
@@ -76,7 +76,7 @@ Input file: new/RS_sep/Sportschau (Cut-2).rec
   TS: PMTPID=5100, SID=10301, PCRPID=5101, Stream=0x1b, VPID=5101, HD=1, InitPage=100
 
   TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
-  TS: EvtDuration = 02:37
+  TS: EvtDuratn = 02:37
   TS: EventName = Sportschau
   TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
   TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
@@ -121,7 +121,7 @@ Input file: new/RS_sep/Sportschau (Cut-3).rec
   TS: PMTPID=5100, SID=10301, PCRPID=5101, Stream=0x1b, VPID=5101, HD=1, InitPage=100
 
   TS: EvtStart  = Sun 19 Mar 2017 09:23:00 (UTC)
-  TS: EvtDuration = 02:37
+  TS: EvtDuratn = 02:37
   TS: EventName = Sportschau
   TS: EventDesc = Snowboard / Biathlon Damen / Telemark-WM / Viererbob / Nord. Kombination
   TS: EPGExtEvt = * Snowboard-Weltcup, Teamentscheidung Parallelslalom (ca. 10:23 Uhr)* live aus Winterberg* Weltcupfinale Biathlon, Massenstart Damen (ca. 11:10 Uhr)* live aus Oslo* Telemark-WM (ca. 11:55 Uhr)* Übertragung aus La Plagne* Weltcupfinale Viererbob, 2. Lauf (ca. 12:05 Uhr)* live aus Pyeongchang* Weltcupfinale Nord. Kombination, Springen (ca. 12:30 Uhr)* live aus Schonach* WM Special Olympics Produziert in HD
@@ -152,7 +152,7 @@ Inf file: new/RS_sep/Sportschau (Cut-3).rec.inf
 
 Nav file: new/RS_sep/Sportschau (Cut-3).rec.nav
   NAV: FirstPTS = 893266052 (5:30:50,356), Last: 893715152 (5:31:00,336)
-  NAV: Duration = 00:00:09,751 (PTS: 00:00:09,980)
+  NAV: Duration = 00:00:09,752 (PTS: 00:00:09,980)
   NAV: Frames   = 500 (51.3 fps)
 
 Cut file: new/RS_sep/Sportschau (Cut-3).cut
