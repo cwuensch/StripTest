@@ -99,9 +99,9 @@ striptest_hd() {
 
 run_recstrip() {
   if [ "$1" == "HD" ] ; then
-    striptest_sd $2
-  else
     striptest_hd $2
+  else
+    striptest_sd $2
   fi
 }
 
