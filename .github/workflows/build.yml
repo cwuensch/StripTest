@@ -1,0 +1,168 @@
+name: Build Docker containers
+
+on:
+  release:
+    types: [ created ]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: write
+
+jobs:
+  rsbuild:
+    name: Build RecStrip reference
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+
+    - name: Install GCC 32bit libs
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-multilib
+        
+    - name: Build RecStrip v3
+      run: |
+        cd ${{ github.workspace }}
+        rm -rf RS/*
+        ./BuildRS.sh RS3 bin/RecStrip3_ref
+      
+    - name: Build RecStrip v2
+      run: |
+        cd ${{ github.workspace }}
+        rm -rf RS/*
+        ./BuildRS.sh master bin/RecStrip_ref
+
+    - name: Upload RecStrip binaries
+      uses: actions/upload-artifact@v4
+      with:
+        name: recstrip-binaries
+        path: |
+          bin/RecStrip_ref
+          bin/RecStrip3_ref
+
+    - name: Attach binaries to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          bin/RecStrip_ref
+          bin/RecStrip3_ref
+
+# ----------------------------------------------------
+
+  compress:
+    name: Create tar archives
+    runs-on: ubuntu-22.04
+    needs: rsbuild
+    strategy:
+      matrix:
+        mode: [SD, HD]
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: Delete reference binaries
+      run: |
+        rm Docker_${{ matrix.mode }}/bin/RecStrip*
+        rm -rf RS/*
+
+    - name: Get reference binaries
+      uses: actions/download-artifact@v4
+      with:
+        name: recstrip-binaries
+        path: ${{ github.workspace }}/Docker_${{ matrix.mode }}/bin
+        
+    - name: Deduplicate files
+      run: |
+        cd ${{ github.workspace }}/Docker_${{ matrix.mode }}
+        ./Deduplicate.sh
+
+    - name: Compress tar archive
+      run: |
+        cd ${{ github.workspace }}/Docker_${{ matrix.mode }}
+        GZIP=-9 tar czfv ../StripTest${{ matrix.mode }}.tar.gz *
+
+    - name: Upload RecStrip binaries
+      uses: actions/upload-artifact@v4
+      with:
+        name: StripTest${{ matrix.mode }}
+        path: ${{ github.workspace }}/StripTest${{ matrix.mode }}.tar.gz
+
+    - name: Attach binaries to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ github.workspace }}/StripTest${{ matrix.mode }}.tar.gz
+
+# ----------------------------------------------------
+
+  docker:
+    name: Build & upload Docker containers
+    runs-on: ubuntu-22.04
+    needs: compress
+    strategy:
+      matrix:
+        mode: [SD, HD]
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+
+    - name: Get tar archive
+      uses: actions/download-artifact@v4
+      with:
+        name: StripTest${{ matrix.mode }}
+        path: ${{ github.workspace }}
+
+    - name: Build Docker container
+      run: |
+        docker build --build-arg SRCTAR="StripTest${{ matrix.mode }}" -t "cwuensch/striptest:${{ matrix.mode }}_neu" .
+
+    - name: Login to Docker.io
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "${{ secrets.DOCKER_USER }}" --password-stdin
+
+    - name: Upload docker image
+      run: |
+        docker push cwuensch/striptest:${{ matrix.mode }}_neu
+
+# ----------------------------------------------------
+
+  dockerall:
+    name: Universal Docker build
+    runs-on: ubuntu-22.04
+    needs: rsbuild
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: Delete reference binaries
+      run: |
+        rm Docker_SD/bin/RecStrip*
+        rm -rf RS/*
+
+    - name: Get reference binaries
+      uses: actions/download-artifact@v4
+      with:
+        name: recstrip-binaries
+        path: ${{ github.workspace }}/Docker_SD/bin
+
+    - name: Build Docker container
+      run: |
+        docker build -f Dockerfile_universal -t "cwuensch/striptest:all" .
+
+    - name: Login to Docker.io
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "${{ secrets.DOCKER_USER }}" --password-stdin
+
+    - name: Upload docker image
+      run: |
+        docker push cwuensch/striptest:all
